@@ -21,4 +21,7 @@ export default StyleSheet.create({
     color: 'green',
     paddingTop: 50,
   },
+  scrollViewStyle: {
+    backgroundColor: 'orange',
+  },
 });

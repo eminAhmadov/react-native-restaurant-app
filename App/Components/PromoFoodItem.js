@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import {
-  ScrollView, Text, Image, View, Platform,
+  Text, Image, View, Platform, TouchableOpacity,
 } from 'react-native';
 
 // Styles
 import styles from './Styles/PromoFoodItemStyles';
 
-const foodItemOne = require('../Images/burger.jpg');
-
 export default class PromoFoodItem extends Component {
   render() {
+    const { image, title } = this.props;
     return (
-      <View style={styles.foodCard}>
-        <View>
-          <Image
-            style={styles.promoImage}
-            source={foodItemOne}
-            resizeMode="contain"
-            blurRadius={Platform.OS === 'ios' ? 5 : 2}
-          />
+      <TouchableOpacity onPress={() => alert(title)}>
+        <View style={styles.foodCard}>
+          <View>
+            <Image
+              style={styles.promoImage}
+              source={image}
+              resizeMode="contain"
+              blurRadius={Platform.OS === 'ios' ? 5 : 2}
+            />
+          </View>
+          <View style={styles.textView}>
+            <Text style={styles.foodTitle}>{title}</Text>
+          </View>
         </View>
-        <View style={styles.textView}>
-          <Text style={styles.foodTitle}>BURGERS</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
