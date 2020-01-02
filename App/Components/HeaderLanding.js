@@ -12,7 +12,7 @@ import styles from './Styles/HeaderLandingStyles';
 export default class HeaderLanding extends Component {
   render() {
     return (
-      <Container>
+      <Container style={styles.headerContainer}>
         <Header style={styles.headerStyle}>
           <Left>
             <Button
@@ -22,7 +22,7 @@ export default class HeaderLanding extends Component {
               <Icon style={styles.iconStyle} name="ios-menu" />
             </Button>
           </Left>
-          <Body>
+          <Body style={styles.bodyStyle}>
             <Text style={styles.titleText}>BBQ</Text>
           </Body>
           <Right>
