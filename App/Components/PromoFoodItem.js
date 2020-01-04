@@ -8,9 +8,12 @@ import styles from './Styles/PromoFoodItemStyles';
 
 export default class PromoFoodItem extends Component {
   render() {
-    const { image, title } = this.props;
+    const { image, title, navigation } = this.props;
     return (
-      <TouchableOpacity onPress={() => alert(title)}>
+      <TouchableOpacity onPress={() => navigation.navigate('FoodScreen', {
+        title,
+      })}
+      >
         <View style={styles.foodCard}>
           <View>
             <Image
