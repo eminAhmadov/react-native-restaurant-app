@@ -43,6 +43,7 @@ export default class FoodScreen extends Component {
             foodImage={foodImages[i]}
             foodDescription={foodDescriptions[i]}
             foodPrice={foodPrices[i]}
+            navigation={navigation}
           />
         </View>,
       );
