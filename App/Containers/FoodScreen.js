@@ -15,12 +15,39 @@ export default class FoodScreen extends Component {
     const { navigation } = this.props;
     this.setState({
       title: navigation.getParam('title', ''),
+      foodTitles: navigation.getParam('foodTitles', ''),
+      foodDescriptions: navigation.getParam('foodDescriptions', ''),
+      foodPrices: navigation.getParam('foodPrices', ''),
+      foodImages: navigation.getParam('foodImages', ''),
+      foodSize: navigation.getParam('foodSize', ''),
     });
   }
 
   render() {
-    const { title } = this.state;
+    const {
+      title,
+      foodTitles,
+      foodDescriptions,
+      foodPrices,
+      foodImages,
+      foodSize,
+    } = this.state;
     const { navigation } = this.props;
+
+    const foodItems = [];
+    for (let i = 0; i < foodSize; i++) {
+      foodItems.push(
+        <View>
+          <FoodItem
+            foodTitle={foodTitles[i]}
+            foodImage={foodImages[i]}
+            foodDescription={foodDescriptions[i]}
+            foodPrice={foodPrices[i]}
+          />
+        </View>,
+      );
+    }
+
     return (
       <Container style={styles.mainContainer}>
         <HeaderFood
@@ -28,7 +55,9 @@ export default class FoodScreen extends Component {
         />
         <Content style={styles.titleTextContent}>
           <Text style={styles.titleText}>{title}</Text>
-          <FoodItem />
+
+          {foodItems}
+
         </Content>
       </Container>
     );

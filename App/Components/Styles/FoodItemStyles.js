@@ -2,6 +2,8 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { Fonts, Colors } from '../../Themes';
 
 const HEIGHT = Dimensions.get('window').height;
+const WIDTH = Dimensions.get('window').width;
+const SCALE = HEIGHT / WIDTH;
 
 export default StyleSheet.create({
   foodItemView: {
@@ -43,7 +45,7 @@ export default StyleSheet.create({
     marginLeft: '35%',
     marginTop: '5%',
     borderRadius: 40,
-    backgroundColor: 'grey',
+    backgroundColor: '#F4F4F4',
 
   },
   foodTextView: {
@@ -57,11 +59,12 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     paddingTop: '5%',
+    fontSize: 18,
   },
   foodDescription: {
     textAlign: 'center',
     fontWeight: '400',
     paddingTop: 5,
-    fontSize: 16,
+    fontSize: SCALE * 7,
   },
 });
