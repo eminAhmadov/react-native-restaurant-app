@@ -11,12 +11,13 @@ import styles from './Styles/HeaderLandingStyles';
 
 export default class HeaderLanding extends Component {
   render() {
+    const { openDrawer, navigation } = this.props;
     return (
       <Container style={styles.headerContainer}>
         <Header style={styles.headerStyle}>
           <Left>
             <Button
-              onPress={() => alert('Left Pressed')}
+              onPress={() => openDrawer()}
               transparent
             >
               <Icon style={styles.iconStyle} name="ios-menu" />
@@ -27,7 +28,7 @@ export default class HeaderLanding extends Component {
           </Body>
           <Right>
             <Button
-              onPress={() => alert('Right Pressed')}
+              onPress={() => navigation.navigate('Cart')}
               transparent
             >
               <Icon style={styles.iconStyle} type="Entypo" name="shopping-cart" />

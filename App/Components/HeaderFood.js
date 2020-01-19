@@ -28,7 +28,7 @@ export default class HeaderFood extends Component {
           </Body>
           <Right>
             <Button
-              onPress={() => alert('Right Pressed')}
+              onPress={() => navigation.navigate('Cart')}
               transparent
             >
               <Icon style={styles.iconStyle} type="Entypo" name="shopping-cart" />
